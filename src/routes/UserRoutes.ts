@@ -12,7 +12,6 @@ import { IReq, IRes } from './types/express/misc';
  */
 async function getAll(_: IReq, res: IRes) {
   // eslint-disable-next-line no-console
-  console.log('DO WE GET HERE???')
   const users = await UserService.getAll();
   return res.status(HttpStatusCodes.OK).json({ users });
 }
@@ -22,25 +21,15 @@ async function getAll(_: IReq, res: IRes) {
  */
 async function add(req: IReq<{user: IUser}>, res: IRes) {
   const { user } = req.body;
-  await UserService.addOne(user);
+  await UserService.addOrUpdate(user);
   return res.status(HttpStatusCodes.CREATED).end();
-}
-
-/**
- * Update one user.
- */
-async function update(req: IReq<{user: IUser}>, res: IRes) {
-  const { user } = req.body;
-  await UserService.updateOne(user);
-  return res.status(HttpStatusCodes.OK).end();
 }
 
 /**
  * Delete one user.
  */
 async function delete_(req: IReq, res: IRes) {
-  const id = +req.params.id;
-  await UserService.delete(id);
+  await UserService.delete(parseInt(req.params.id));
   return res.status(HttpStatusCodes.OK).end();
 }
 
@@ -50,6 +39,5 @@ async function delete_(req: IReq, res: IRes) {
 export default {
   getAll,
   add,
-  update,
   delete: delete_,
 } as const;

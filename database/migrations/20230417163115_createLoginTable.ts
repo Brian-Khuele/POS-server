@@ -5,7 +5,7 @@ export async function up(knex: Knex): Promise<void> {
     table.increments('user_id').primary()
     table.string('firstName').notNullable()
     table.string('lastName').notNullable()
-    table.string('email').notNullable()
+    table.string('email').notNullable().unique()
     table.string('password').notNullable()
     table.boolean('hasResetDefaultPassword').notNullable()
     table.string('userType').notNullable()

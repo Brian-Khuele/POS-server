@@ -19,6 +19,30 @@ const Paths = {
     Update: '/update',
     Delete: '/delete/:id',
   },
+  Products: {
+    Base: '/products',
+    Get: '/all',
+    Add: '/add',
+    Update: '/update',
+    Delete: '/delete/:id',
+  },
+  Sale: {
+    Base: '/sales',
+    Get: '/all',
+    Add: '/add',
+    Update: '/update',
+    Delete: '/delete/:id',
+    Prepare: '/prepare',
+    Collect: '/collect',
+    Deliver: '/deliver',
+  },
+  Stock: {
+    Base: '/stock',
+    Get: '/all',
+    Add: '/add',
+    Update: '/update',
+    Delete: '/delete/:id',
+  },
 };
 
 

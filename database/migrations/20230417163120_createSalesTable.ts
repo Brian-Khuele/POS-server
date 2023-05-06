@@ -8,7 +8,8 @@ export async function up(knex: Knex): Promise<void> {
     table.integer('product_id').unsigned()
     table.integer('user_id').unsigned()
     table.integer('qty').notNullable().defaultTo(0)
-    table.integer('order_status').notNullable().defaultTo(0)
+    table.string('order_status')
+    table.string('order_number').notNullable().unique()
     
     table.foreign('store_id').references('store_id').inTable('store')
     table.foreign('product_id').references('product_id').inTable('products')
