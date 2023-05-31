@@ -1,18 +1,18 @@
-import type { Knex } from 'knex';
+import type { Knex } from 'knex'
 
 const config: { [key: string]: Knex.Config } = {
   development: {
     client: 'pg',
     connection: {
-      database: 'platinumHubbly',
-      user: 'postgres',
-      password: '4321',
-      host: 'localhost',
+      database: 'd3vq5ak5e6hgcp',
+      user: 'xwzscllzkmzzma',
+      password: '1589a964d688ef7b648cfa9bef5d357fd31b7ec60a889f4767440e4cea0e6423',
+      host: 'ec2-52-215-209-64.eu-west-1.compute.amazonaws.com',
       port: 5432,
     },
-    pool:{
+    pool: {
       min: 2,
-      max:10,
+      max: 10,
     },
     migrations: {
       directory: __dirname + '/database/migrations',
@@ -23,36 +23,46 @@ const config: { [key: string]: Knex.Config } = {
   },
 
   staging: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password',
+      database: 'd3vq5ak5e6hgcp',
+      user: 'xwzscllzkmzzma',
+      password: '1589a964d688ef7b648cfa9bef5d357fd31b7ec60a889f4767440e4cea0e6423',
+      host: 'ec2-52-215-209-64.eu-west-1.compute.amazonaws.com',
+      port: 5432,
     },
     pool: {
       min: 2,
       max: 10,
     },
     migrations: {
-      tableName: 'knex_migrations',
+      directory: __dirname + '/database/migrations',
+    },
+    seeds: {
+      directory: __dirname + '/database/seeds',
     },
   },
 
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
-      database: 'platinumHubbly',
-      user: 'admin',
-      password: 'platinumHubbly',
+      database: 'd3vq5ak5e6hgcp',
+      user: 'xwzscllzkmzzma',
+      password: '1589a964d688ef7b648cfa9bef5d357fd31b7ec60a889f4767440e4cea0e6423',
+      host: 'ec2-52-215-209-64.eu-west-1.compute.amazonaws.com',
+      port: 5432,
     },
     pool: {
       min: 2,
       max: 10,
     },
     migrations: {
-      tableName: 'knex_migrations',
+      directory: __dirname + '/database/migrations',
+    },
+    seeds: {
+      directory: __dirname + '/database/seeds',
     },
   },
-};
+}
 
-export default config;
+export default config
