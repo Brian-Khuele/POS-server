@@ -20,9 +20,7 @@ import HttpStatusCodes from '@src/constants/HttpStatusCodes'
 import { NodeEnvs } from '@src/constants/misc'
 import { RouteError } from '@src/other/classes'
 import { knex } from 'knex'
-import config from 'knexfile'
-import UserService from './services/UserService'
-
+import config from '../knexfile'
 // eslint-disable-next-line max-len, @typescript-eslint/no-unsafe-argument
 console.log('env:', process.env.NODE_ENV)
 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument

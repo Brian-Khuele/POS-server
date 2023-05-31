@@ -66,10 +66,10 @@
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "paths": {
-      "@src/*": ["src/*"]
+        "@src/*": ["src/*"],
     },
     "useUnknownInCatchVariables": false
   },
-  "include": ["src/**/*.ts", "spec/**/*.ts", "build.ts", "knexfile.ts", "database/**/*.ts"],
-  "exclude": ["src/public/"]
+  "include": ["src/**/*.ts", "spec/**/*.ts", "build.ts", "database/**/*.ts"],
+  "exclude": ["src/public/", "knexfile.ts"]
 }
