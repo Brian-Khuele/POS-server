@@ -9,7 +9,7 @@ import morgan from 'morgan'
 import helmet from 'helmet'
 import express, { Request, Response, NextFunction } from 'express'
 import logger from 'jet-logger'
-
+import cors from 'cors'
 import 'express-async-errors'
 
 import BaseRouter from '@src/routes/api'
@@ -32,6 +32,7 @@ const app = express()
 // **** Setup **** //
 
 // Basic middleware
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser(EnvVars.CookieProps.Secret))
