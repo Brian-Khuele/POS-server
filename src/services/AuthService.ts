@@ -31,7 +31,7 @@ async function login(email: string, password: string): Promise<any> {
     const user = await db('sys_user').select().where({ email: email })
 
     if (!user) {
-      throw new RouteError(HttpStatusCodes.UNAUTHORIZED, Errors.EmailNotFound(email))
+      return new RouteError(HttpStatusCodes.UNAUTHORIZED, Errors.EmailNotFound(email))
     }
 
     // Check password
